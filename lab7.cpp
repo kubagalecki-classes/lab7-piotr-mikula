@@ -9,8 +9,8 @@ int main()
     try {
         std::vector< int > vec(n, 0);
     }
-    catch (...) {
-        std::cout << "Wyjatek!\n";
+    catch (const std::bad_alloc& ba) {
+        std::cout << "bad_alloc caught: " << ba.what() << '\n';
     }
 
     puts("\nOstatnia linijka kodu!");
