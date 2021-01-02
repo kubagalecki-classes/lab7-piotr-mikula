@@ -21,11 +21,8 @@ int main()
             var = "nieparzyste";
         std::cout << std::get< int >(var) << std::endl;
     }
-    catch (const std::bad_alloc& ba) {
-        std::cout << "bad_alloc caught: " << ba.what() << '\n';
-    }
-    catch (const std::bad_variant_access& bva) {
-        std::cout << "bad_variant_access: " << bva.what() << '\n';
+    catch (const std::exception& e) {
+        std::cout << "exception caught: " << e.what() << '\n';
     }
 
     puts("\nOstatnia linijka kodu!");
