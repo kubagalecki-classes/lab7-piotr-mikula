@@ -2,6 +2,13 @@
 #include <variant>
 #include <vector>
 
+class Informer
+{
+public:
+    Informer() { std::cout << "Utworzono Informer" << std::endl; }
+    ~Informer() { std::cout << "Zniszczono Informer" << std::endl; }
+};
+
 double podziel(int a, int b)
 {
     if (b == 0)
@@ -21,6 +28,7 @@ int main()
     std::cin >> b;
 
     try {
+        Informer informer1;
         std::cout << podziel(a, b) << std::endl;
     }
     catch (int& i) {
